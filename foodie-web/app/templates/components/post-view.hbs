@@ -1,0 +1,5 @@
+{{#if isEditable}}
+  {{post-form model=model onUpdate=(action "updateRecord") onCancel=(action "postViewable")}}
+{{else}}
+  {{post-static model=model onEditable=(action "postEditable")}}
+{{/if}}

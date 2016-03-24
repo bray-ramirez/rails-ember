@@ -1,0 +1,17 @@
+<div class="page-header">
+  <div class="pull-left">
+    <h1>{{model.title}}</h1>
+    <small>By: {{model.author}}</small>
+  </div>
+  <div class="pull-right">
+    {{#if isOwner}}
+      <button {{action "postEditable"}} class="btn btn-primary">Edit</button>
+      <a href="#" class="btn btn-danger">
+        <span class="glyphicon glyphicon-trash"></span>
+      </a>
+    {{/if}}
+  </div>
+  <div class="clearfix" />
+</div>
+
+<p>{{model.content}}</p>

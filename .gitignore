@@ -1,0 +1,24 @@
+# Rails
+foodie-api/.bundle
+foodie-api/log/*
+foodie-api/tmp
+
+foodie-api/config/database.yml
+foodie-api/config/secrets.yml
+
+
+# Ember
+foodie-web/dist
+foodie-web/tmp
+
+# dependencies
+foodie-web/node_modules
+foodie-web/bower_components
+
+# misc
+foodie-web/.sass-cache
+foodie-web/connect.lock
+foodie-web/coverage/*
+foodie-web/libpeerconnection.log
+foodie-web/npm-debug.log
+foodie-web/testem.log

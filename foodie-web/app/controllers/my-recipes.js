@@ -9,7 +9,8 @@ export default Ember.Controller.extend({
 
   actions: {
     createRecord: function(attributes){
-      var data = {};
+      var _this = this,
+          data = {};
 
       for (var key in attributes){
         if (attributes.hasOwnProperty(key)){
@@ -17,9 +18,12 @@ export default Ember.Controller.extend({
         }
       }
 
-      var blog = this.store.createRecord('recipe', data);
+      var recipe = this.store.createRecord('recipe', data);
 
-      blog.save();
+      recipe.save().then(function(){
+        _this.store.unloadAll('activity');
+        _this.store.findAll('activity');
+      });
     }
   }
 

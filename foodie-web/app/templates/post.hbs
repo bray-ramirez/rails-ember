@@ -1,7 +1,10 @@
 <div class="col-md-8">
-
   {{post-view model=model onUpdate=(action "updateRecord") onDelete=(action "deleteRecord")}}
-
 </div>
 
-{{outlet "sidebar"}}
+<div class="col-md-4">
+  <div class="row">
+    {{outlet "sidebar"}}
+  </div>
+</div>
+

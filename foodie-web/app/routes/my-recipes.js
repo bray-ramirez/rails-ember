@@ -4,9 +4,28 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   model: function(){
-    return this.store.findAll('recipe');
+    return Ember.RSVP.hash({
+      posts: this.store.findAll('recipe'),
+      activities: this.store.findAll('activity')
+    });
   },
 
-  templateName: 'my-posts',
+  setupController: function(controller, model){
+    this.set('posts', model.posts);
+    this.set('activities', model.activities);
+
+    controller.set('model', model.posts);
+  },
+
+  renderTemplate: function(){
+    this.render();
+    this.render('activity', {
+      into: 'my_recipes',
+      outlet: 'sidebar',
+      model: this.get('activities')
+    });
+  },
+
+  templateName: 'my-posts'
 
 });

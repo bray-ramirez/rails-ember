@@ -21,7 +21,8 @@ export default Ember.Controller.extend({
       var blog = this.store.createRecord('blog', data);
 
       blog.save().then(function(blog){
-        _this.transitionToRoute('blog', blog);
+        _this.store.unloadAll('activity');
+        _this.store.findAll('activity');
       });
     }
   }

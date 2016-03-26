@@ -12,7 +12,10 @@ export default Ember.Controller.extend({
         post.set('title', _this.get('model.title'));
         post.set('content', _this.get('model.content'));
 
-        post.save();
+        post.save().then(function(){
+          _this.store.unloadAll('activity');
+          _this.store.findAll('activity');
+        });
       });
     },
 
@@ -23,6 +26,9 @@ export default Ember.Controller.extend({
 
       this.store.findRecord(type, id).then(function(post){
         post.destroyRecord().then(function(){
+          _this.store.unloadAll('activity');
+          _this.store.findAll('activity');
+
           _this.transitionToRoute('activity');
         });
       });

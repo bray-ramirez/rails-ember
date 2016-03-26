@@ -26,6 +26,10 @@ class RecipesController < BaseController
 
   protected
 
+  def records
+    @records ||= current_user.recipes.latest
+  end
+
   def viewable_record
     @viewable_record ||= self.recipe
   end

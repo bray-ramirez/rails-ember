@@ -1,14 +1,18 @@
 <div class="page-header">
   <div class="pull-left">
     <h1>{{model.title}}</h1>
-    <small>By: {{model.author}}</small>
+    <small>By: {{model.author}}
+      {{#if isOwner}}{{model.isPublished}}{{/if}}
+    </small>
   </div>
   <div class="pull-right">
     {{#if isOwner}}
-      <button {{action "postEditable"}} class="btn btn-primary">Edit</button>
-      <a href="#" class="btn btn-danger">
+      <button {{action "postEditable"}} class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+      </button>
+      <button {{action "deleteRecord"}} class="btn btn-danger">
         <span class="glyphicon glyphicon-trash"></span>
-      </a>
+      </button>
     {{/if}}
   </div>
   <div class="clearfix" />

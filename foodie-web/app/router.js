@@ -11,6 +11,9 @@ Router.map(function() {
   this.route('blog', { path: '/blogs/:id' });
   this.route('recipe', { path: '/recipes/:id' });
   this.route('review', { path: '/reviews/:id' });
+  this.route('my_blogs');
+  this.route('my_reviews');
+  this.route('my_recipes');
 });
 
 export default Router;

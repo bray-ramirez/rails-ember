@@ -1,0 +1,13 @@
+<div class="page-header">
+  <div class="pull-left">
+    <h1>My {{header}}</h1>
+  </div>
+  <div class="pull-right">
+    {{#unless isNewFormVisible}}
+      <button {{action "showNewForm"}} class="btn btn-primary">
+        + New
+      </button>
+    {{/unless}}
+  </div>
+  <div class="clearfix" />
+</div>

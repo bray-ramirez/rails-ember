@@ -26,6 +26,10 @@ class ReviewsController < BaseController
 
   protected
 
+  def records
+    @records ||= current_user.reviews.latest
+  end
+
   def viewable_record
     @viewable_record ||= self.review
   end

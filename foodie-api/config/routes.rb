@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
     resources :activities, :only => [:index]
 
-    resources :blogs, :only => [:show, :create, :update, :destroy]
-    resources :recipes, :only => [:show, :create, :update, :destroy]
-    resources :reviews, :only => [:show, :create, :update, :destroy]
+    resources :blogs, :only => [:index, :show, :create, :update, :destroy]
+    resources :recipes, :only => [:index, :show, :create, :update, :destroy]
+    resources :reviews, :only => [:index, :show, :create, :update, :destroy]
 
     resources :users, :only => [:create]
 

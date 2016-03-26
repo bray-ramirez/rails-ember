@@ -22,5 +22,6 @@ class Post < ActiveRecord::Base
 
 
   scope :published, -> { where :visible => true }
+  scope :latest, -> { order :created_at => :desc }
 
 end

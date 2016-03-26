@@ -13,6 +13,10 @@ export default Ember.Component.extend({
   actions: {
     postEditable: function(){
       this.get('onEditable')();
+    },
+
+    deleteRecord: function(){
+      this.get('onDelete')();
     }
   }
 });

@@ -1,12 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
   isEditable: false,
 
   actions: {
     updateRecord: function(){
       this.get('onUpdate')();
       this.set('isEditable', false);
+    },
+
+    deleteRecord: function(){
+      this.get('onDelete')();
     },
 
     postEditable: function(){
@@ -17,4 +22,5 @@ export default Ember.Component.extend({
       this.set('isEditable', false);
     }
   }
+
 });

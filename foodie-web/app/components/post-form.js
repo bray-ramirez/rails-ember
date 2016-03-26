@@ -1,10 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-
   actions: {
     save: function(){
-      this.get('onUpdate')();
+      this.get('onSave')();
     },
 
     postViewable: function(){

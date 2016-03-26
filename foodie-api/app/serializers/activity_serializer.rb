@@ -21,8 +21,8 @@ class ActivitySerializer < ActiveModel::Serializer
   ACTION_DESCRIPTION = ['created', 'updated', 'deleted']
 
 
-  attributes :id, :action,  :trackable_id, :trackable_type, :is_active,
-    :created_at
+  attributes :id, :action, :trackable_id, :trackable_type,
+    :is_active, :is_visible, :created_at, :user_id
 
 
   def action
@@ -36,6 +36,18 @@ class ActivitySerializer < ActiveModel::Serializer
 
   def is_active
     self.object.trackable.present?
+  end
+
+  def is_visible
+    return false if self.object.trackable.nil?
+
+    self.object.trackable.visible?
+  end
+
+  def user_id
+    return nil if self.object.trackable.nil?
+
+    self.object.trackable.user_id
   end
 
 

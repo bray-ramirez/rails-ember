@@ -26,6 +26,10 @@ class BlogsController < BaseController
 
   protected
 
+  def records
+    @records ||= current_user.blogs.latest
+  end
+
   def viewable_record
     @viewable_record ||= self.blog
   end

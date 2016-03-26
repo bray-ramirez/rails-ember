@@ -18,7 +18,8 @@
 
 class PostSerializer < ActiveModel::Serializer
 
-  attributes :id, :title, :content, :user_id, :author, :type
+  attributes :id, :title, :content, :user_id, :author, :type, :visible,
+    :created_at
 
 
   def author

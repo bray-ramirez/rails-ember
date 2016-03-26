@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
@@ -5,5 +6,11 @@ export default DS.Model.extend({
   content: DS.attr('string'),
   user_id: DS.attr('number'),
   author: DS.attr('string'),
-  type: DS.attr('string')
+  type: DS.attr('string'),
+  visible: DS.attr('boolean'),
+  created_at: DS.attr('date'),
+
+  isPublished: Ember.computed('visible', function(){
+    return this.get('visible') ? '(Published)' : '';
+  })
 });

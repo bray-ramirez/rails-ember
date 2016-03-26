@@ -1,0 +1,5 @@
+<div class="page-header">
+  <h1>Edit {{model.type}}</h1>
+</div>
+
+{{post-form model=model bufferedAttributes=bufferedAttributes onSave=(action "updateRecord") onCancel=(action "cancelUpdate")}}

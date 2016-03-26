@@ -3,6 +3,13 @@
     <div class="navbar-header">
       {{#link-to "activity" class="navbar-brand"}}Foodie{{/link-to}}
     </div>
+    {{#if session.isAuthenticated}}
+      <ul class="nav navbar-nav">
+        <li>{{#link-to "my_blogs"}}My Blogs{{/link-to}}</li>
+        <li>{{#link-to "my_recipes"}}My Recipes{{/link-to}}</li>
+        <li>{{#link-to "my_reviews"}}My Reviews{{/link-to}}</li>
+      </ul>
+    {{/if}}
 
     <ul class="nav navbar-nav navbar-right">
       {{#if session.isAuthenticated}}

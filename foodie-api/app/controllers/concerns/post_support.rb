@@ -6,9 +6,14 @@ module PostSupport
 
   included do
     before_action :authenticate_access!,
-      :only => [:create, :update, :destroy]
+      :only => [:index, :create, :update, :destroy]
   end
 
+
+  def index
+    render :json => self.records,
+      :each_serializer => PostSerializer
+  end
 
   def show
     return self.not_found_error if self.viewable_record.nil?
@@ -19,7 +24,7 @@ module PostSupport
   end
 
   def create
-    form = CreatePostForm.new self.new_record
+    form = PostForm.new self.new_record
 
     if form.validate self.record_params
       form.save
@@ -36,7 +41,7 @@ module PostSupport
   def update
     return self.not_found_error if self.record.nil?
 
-    form = UpdatePostForm.new self.record
+    form = PostForm.new self.record
 
     if form.validate self.record_params
       form.save
@@ -55,7 +60,7 @@ module PostSupport
 
     PostDestroyer.new(self.record).destroy
 
-    render :json => {:success => true}
+    render :json => {}, :status => :ok
   end
 
 end

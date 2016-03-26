@@ -1,0 +1,8 @@
+{{#each activities as |activity|}}
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h4>{{activity.action}}</h4>
+    </div>
+    {{activity-footer activity=activity}}
+  </div>
+{{/each}}

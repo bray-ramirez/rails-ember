@@ -1,12 +1,5 @@
 <div class="col-md-12">
 
-  {{#each sortedActivities as |activity|}}
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <h4>{{activity.action}}</h4>
-      </div>
-      {{activity-footer activity=activity}}
-    </div>
-  {{/each}}
+  {{activity-list activities=sortedActivities}}
 
 </div>

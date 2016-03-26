@@ -7,7 +7,7 @@ export default Ember.Component.extend({
       title: '',
       content: '',
       visible: false
-    }
+    };
   }.property('bufferedAttributes'),
 
   actions: {

@@ -33,8 +33,9 @@ module PostSupport
         :serializer => PostSerializer,
         :root => self.root
     else
-      # Do Something
-      puts 'Create Error'
+      render :json => {
+        :errors => form.errors
+      }, :status => :unprocessable_entity
     end
   end
 
@@ -50,8 +51,9 @@ module PostSupport
         :serializer => PostSerializer,
         :root => self.root
     else
-      # Do Something
-      puts 'Update Error'
+      render :json => {
+        :errors => form.errors
+      }, :status => :unprocessable_entity
     end
   end
 

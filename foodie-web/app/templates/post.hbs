@@ -1,5 +1,17 @@
+{{bufferdAttributes.title}}
 <div class="col-md-8">
-  {{post-view model=model onUpdate=(action "updateRecord") onDelete=(action "deleteRecord")}}
+  {{
+    post-view
+      model=model
+      isEditable=isEditable
+      bufferedAttributes=bufferedAttributes
+      errors=errors.bufferedAttributes
+      showErrors=showErrors
+      onShowForm=(action "showForm")
+      onHideForm=(action "hideForm")
+      onUpdate=(action "updateRecord")
+      onDelete=(action "deleteRecord")
+  }}
 </div>
 
 <div class="col-md-4">
@@ -7,4 +19,3 @@
     {{outlet "sidebar"}}
   </div>
 </div>
-

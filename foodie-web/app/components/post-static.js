@@ -11,8 +11,8 @@ export default Ember.Component.extend({
   }),
 
   actions: {
-    postEditable: function(){
-      this.get('onEditable')();
+    showForm: function(){
+      this.get('onShowForm')();
     },
 
     deleteRecord: function(){

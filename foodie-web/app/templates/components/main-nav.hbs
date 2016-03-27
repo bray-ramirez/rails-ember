@@ -13,6 +13,11 @@
 
     <ul class="nav navbar-nav navbar-right">
       {{#if session.isAuthenticated}}
+        {{#if session.data.authenticated.admin}}
+          <li>
+            {{#link-to "user"}}Users{{/link-to}}
+          </li>
+        {{/if}}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             {{session.data.authenticated.name}} <span class="caret"></span>

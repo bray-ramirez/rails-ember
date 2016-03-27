@@ -2,4 +2,12 @@
   <h1>Edit {{model.type}}</h1>
 </div>
 
-{{post-form model=model bufferedAttributes=bufferedAttributes onSave=(action "updateRecord") onCancel=(action "cancelUpdate")}}
+{{
+  post-form
+    model=model
+    bufferedAttributes=bufferedAttributes
+    errors=errors
+    showErrors=showErrors
+    onSave=(action "updateRecord")
+    onCancel=(action "cancelUpdate")
+}}

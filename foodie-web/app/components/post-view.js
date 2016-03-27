@@ -2,24 +2,21 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-  isEditable: false,
-
   actions: {
     updateRecord: function(){
       this.get('onUpdate')();
-      this.set('isEditable', false);
     },
 
     deleteRecord: function(){
       this.get('onDelete')();
     },
 
-    postEditable: function(){
-      this.set('isEditable', true);
+    showForm: function(){
+      this.get('onShowForm')();
     },
 
-    postViewable: function(){
-      this.set('isEditable', false);
+    hideForm: function(){
+      this.get('onHideForm')();
     }
   }
 

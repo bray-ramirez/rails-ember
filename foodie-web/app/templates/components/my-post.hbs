@@ -1,9 +1,21 @@
 <div class="col-md-8">
 
-  {{my-post-header header=header isNewFormVisible=isNewFormVisible onShowNewForm=(action "showNewForm")}}
+  {{
+    my-post-header
+      header=header
+      isNewFormVisible=isNewFormVisible
+      onShowForm=(action "showForm")
+  }}
 
   {{#if isNewFormVisible}}
-    {{post-new onCreate=(action "createRecord") onHideNewForm=(action "hideNewForm")}}
+    {{
+      post-new
+        bufferedAttributes=bufferedAttributes
+        showErrors=showErrors
+        errors=errors
+        onCreate=(action "createRecord")
+        onHideForm=(action "hideForm")
+    }}
   {{/if}}
 
   {{my-post-list sortedRecord=sortedRecord}}

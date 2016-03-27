@@ -26,6 +26,17 @@ export default Ember.Route.extend({
   },
 
   templateName: 'post',
-  controllerName: 'post'
+  controllerName: 'post',
+
+  actions: {
+    error: function(error, transition){
+      if (error.status === 404){
+        this.transitionTo('400');
+      }
+      else {
+        this.transitionTo('500');
+      }
+    }
+  }
 
 });

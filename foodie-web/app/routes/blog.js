@@ -3,8 +3,6 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   model: function(params){
-    console.log(params);
-
     return Ember.RSVP.hash({
       post: this.store.find('blog', params.id),
       activities: this.store.findAll('activity')
@@ -28,6 +26,17 @@ export default Ember.Route.extend({
   },
 
   templateName: 'post',
-  controllerName: 'post'
+  controllerName: 'post',
+
+  actions: {
+    error: function(error, transition){
+      if (error.status === 404){
+        this.transitionTo('400');
+      }
+      else {
+        this.transitionTo('500');
+      }
+    }
+  }
 
 });

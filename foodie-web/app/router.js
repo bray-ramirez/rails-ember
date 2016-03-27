@@ -14,6 +14,10 @@ Router.map(function() {
   this.route('my_blogs');
   this.route('my_reviews');
   this.route('my_recipes');
+  this.route('user', { path: '/users' });
+  this.route('404');
+  this.route('500');
+  this.route('invalid', { path: '/*path' });
 });
 
 export default Router;

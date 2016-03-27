@@ -14,9 +14,13 @@ class Admin::UsersController < Admin::BaseController
     if form.validate params[:user]
       form.save
 
-      render :json => form.model, :serializer => UserSerializer
+      render :json => form.model,
+        :serializer => UserSerializer,
+        :root => :user
     else
-      # Do something
+      render :json => {
+        :errors => form.errors
+      }, :status => :unprocessable_entity
     end
   end
 
@@ -26,7 +30,7 @@ class Admin::UsersController < Admin::BaseController
 
     user.destroy
 
-    render :json => {:success => true}
+    render :json => {}, :status => :ok
   end
 
 end

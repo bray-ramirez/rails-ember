@@ -1,5 +1,18 @@
 {{#if isEditable}}
-  {{post-edit model=model onUpdate=(action "updateRecord") onCancel=(action "postViewable")}}
+  {{
+    post-edit
+      model=model
+      bufferedAttributes=bufferedAttributes
+      errors=errors
+      showErrors=showErrors
+      onUpdate=(action "updateRecord")
+      onCancel=(action "hideForm")
+  }}
 {{else}}
-  {{post-static model=model onEditable=(action "postEditable") onDelete=(action "deleteRecord")}}
+  {{
+    post-static
+      model=model
+      onShowForm=(action "showForm")
+      onDelete=(action "deleteRecord")
+  }}
 {{/if}}

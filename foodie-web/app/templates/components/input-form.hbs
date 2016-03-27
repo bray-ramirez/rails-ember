@@ -1,0 +1,20 @@
+<div class="form-group {{hasErrorClass}}">
+  <label for={{field}} class="col-sm-2 control-label">
+    {{label}}
+  </label>
+  <div class="col-sm-10">
+    {{
+      input
+        type=type
+        id=field
+        class="form-control"
+        placeholder=label
+        value=value
+    }}
+    {{#if hasError}}
+      <span class="help-block">
+        {{errors}}
+      </span>
+    {{/if}}
+  </div>
+</div>

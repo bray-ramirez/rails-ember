@@ -1,4 +1,15 @@
-{{my-post sortedRecord=sortedRecord header=header onCreate=(action "createRecord")}}
+{{
+  my-post
+    sortedRecord=sortedRecord
+    header=header
+    isNewFormVisible=isNewFormVisible
+    bufferedAttributes=bufferedAttributes
+    showErrors=showErrors
+    errors=errors.bufferedAttributes
+    onShowForm=(action "showForm")
+    onHideForm=(action "hideForm")
+    onCreate=(action "createRecord")
+}}
 
 <div class="col-md-4">
   <div class="row">

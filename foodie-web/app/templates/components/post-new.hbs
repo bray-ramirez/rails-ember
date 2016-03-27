@@ -1,4 +1,11 @@
-{{post-form bufferedAttributes=bufferedAttributes onSave=(action "createRecord") onCancel=(action "hideNewForm")}}
+{{
+  post-form
+    bufferedAttributes=bufferedAttributes
+    showErrors=showErrors
+    errors=errors
+    onSave=(action "createRecord")
+    onCancel=(action "hideForm")
+}}
 
 <div class="clearfix" />
 

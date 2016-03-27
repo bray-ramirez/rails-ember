@@ -5,17 +5,16 @@ export default Ember.Component.extend({
   isNewFormVisible: false,
 
   actions: {
-    createRecord: function(attributes){
-      this.get('onCreate')(attributes);
-      this.set('isNewFormVisible', false);
+    createRecord: function(){
+      this.get('onCreate')();
     },
 
-    showNewForm: function(){
-      this.set('isNewFormVisible', true);
+    showForm: function(){
+      this.get('onShowForm')();
     },
 
-    hideNewForm: function(){
-      this.set('isNewFormVisible', false);
+    hideForm: function(){
+      this.get('onHideForm')();
     }
   }
 

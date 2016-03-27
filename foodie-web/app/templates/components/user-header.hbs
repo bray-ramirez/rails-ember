@@ -1,0 +1,26 @@
+<div class="col-md-12">
+  <div class="page-header">
+    <div class="pull-left">
+      <h1>Users List</h1>
+    </div>
+    <div class="pull-right">
+      {{#unless isNewFormVisible}}
+        <button {{action "showForm"}} class="btn btn-primary">
+          + New
+        </button>
+      {{/unless}}
+    </div>
+    <div class="clearfix" />
+  </div>
+</div>
+
+{{#if isNewFormVisible}}
+  {{
+    user-form
+      userAttributes=userAttributes
+      errors=errors
+      showErrors=showErrors
+      onHideForm=(action "hideForm")
+      onSave=(action "save")
+  }}
+{{/if}}

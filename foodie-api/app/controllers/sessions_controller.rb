@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
         :id => self.session_authenticator.user.id,
         :email => self.session_authenticator.user.email,
         :name => self.session_authenticator.user.name,
-        :auth_token => self.session_authenticator.user.auth_token
+        :auth_token => self.session_authenticator.user.auth_token,
+        :admin => self.session_authenticator.user.admin?
       }
   end
 

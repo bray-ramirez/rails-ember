@@ -4,6 +4,7 @@ import ActiveModelAdapter from 'active-model-adapter';
 
 // export default DS.JSONAPIAdapter.extend({
 export default ActiveModelAdapter.extend({
+
   namespace: 'api',
   host: 'http://localhost:3000',
   session: Ember.inject.service('session'),
@@ -21,4 +22,5 @@ export default ActiveModelAdapter.extend({
       'X-Authorization-Email': details.email
     };
   })
+
 });

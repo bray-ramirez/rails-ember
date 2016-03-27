@@ -15,9 +15,6 @@ Rails.application.routes.draw do
     resources :recipes, :only => [:index, :show, :create, :update, :destroy]
     resources :reviews, :only => [:index, :show, :create, :update, :destroy]
 
-    resources :users, :only => [:create]
-
-
     namespace :admin do
       resources :users, :only => [:index, :create, :destroy]
     end

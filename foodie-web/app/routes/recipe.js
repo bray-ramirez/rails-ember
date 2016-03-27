@@ -1,42 +1,8 @@
 import Ember from 'ember';
+import PostableWithSidebar from '../mixins/postable-with-sidebar';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(PostableWithSidebar, {
 
-  model: function(params){
-    return Ember.RSVP.hash({
-      post: this.store.find('recipe', params.id),
-      activities: this.store.findAll('activity')
-    });
-  },
-
-  setupController: function(controller, model){
-    this.set('post', model.post);
-    this.set('activities', model.activities);
-
-    controller.set('model', model.post);
-  },
-
-  renderTemplate: function(){
-    this.render();
-    this.render('activity', {
-      into: 'recipe',
-      outlet: 'sidebar',
-      model: this.get('activities')
-    });
-  },
-
-  templateName: 'post',
-  controllerName: 'post',
-
-  actions: {
-    error: function(error, transition){
-      if (error.status === 404){
-        this.transitionTo('400');
-      }
-      else {
-        this.transitionTo('500');
-      }
-    }
-  }
+  _type: 'recipe'
 
 });

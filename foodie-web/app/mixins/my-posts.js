@@ -61,7 +61,7 @@ export default Ember.Mixin.create(EmberValidations, {
           _this.store.unloadRecord(post);
         });
       }).catch(function(){
-        _this.set('showErrors', true)
+        _this.set('showErrors', true);
       });
     },
 

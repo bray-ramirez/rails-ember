@@ -1,0 +1,6 @@
+foodie-api/.bundle
+foodie-api/log/*
+foodie-api/tmp
+
+foodie-api/config/database.yml
+foodie-api/config/secrets.yml

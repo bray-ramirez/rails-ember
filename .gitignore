@@ -10,6 +10,7 @@ foodie-api/config/secrets.yml
 # Ember
 foodie-web/dist
 foodie-web/tmp
+foodie-web/config/deploy.js
 
 # dependencies
 foodie-web/node_modules

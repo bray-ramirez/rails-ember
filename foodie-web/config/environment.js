@@ -32,6 +32,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.HOST = 'http://localhost:3000'
+    ENV.APP.DEVISE_END_POINT = 'http://localhost:3000/api/login'
   }
 
   if (environment === 'test') {
@@ -47,7 +49,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.HOST = 'https://pure-waters-41744.herokuapp.com/'
+    ENV.APP.DEVISE_END_POINT = 'https://pure-waters-41744.herokuapp.com/api/login'
   }
 
   return ENV;

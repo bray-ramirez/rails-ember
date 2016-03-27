@@ -1,12 +1,11 @@
 import Ember from 'ember';
-import DS from 'ember-data';
 import ActiveModelAdapter from 'active-model-adapter';
+import ENV from 'foodie-web/config/environment';
 
-// export default DS.JSONAPIAdapter.extend({
 export default ActiveModelAdapter.extend({
 
   namespace: 'api',
-  host: 'http://localhost:3000',
+  host: ENV.APP.HOST,
   session: Ember.inject.service('session'),
 
   headers: Ember.computed('session', function(){

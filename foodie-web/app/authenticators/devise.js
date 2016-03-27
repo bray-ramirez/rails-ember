@@ -1,6 +1,7 @@
 import Devise from 'ember-simple-auth/authenticators/devise';
+import ENV from 'foodie-web/config/environment';
 
 export default Devise.extend({
-  serverTokenEndpoint: 'http://localhost:3000/api/login',
+  serverTokenEndpoint: ENV.APP.DEVISE_END_POINT,
   tokenAttributeName: 'auth_token'
 });

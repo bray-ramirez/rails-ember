@@ -13,7 +13,7 @@
 * `bundle install`
 * `rake db:create; rake db:migrate; rake db:seed;`
 
-## Running the applicaation
+## Running the application
 * `rails s`
 * Application will be running at `localhost:3000`
 * Run [EmberJS](https://github.com/brayramirez/rails-ember/tree/master/foodie-web)

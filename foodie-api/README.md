@@ -16,3 +16,4 @@
 ## Running the applicaation
 * `rails s`
 * Application will be running at `localhost:3000`
+* Run [EmberJS](https://github.com/brayramirez/rails-ember/tree/master/foodie-web)

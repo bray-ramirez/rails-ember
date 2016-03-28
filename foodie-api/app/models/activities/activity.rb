@@ -25,6 +25,7 @@ class Activity < ActiveRecord::Base
   end
 
   VALID_ACTIONS = ACTION::CREATE..ACTION::DESTROY
+  RECENT_LIMIT = 20
 
   scope :by_newest, -> { order :created_at => :desc }
 
@@ -34,7 +35,7 @@ class Activity < ActiveRecord::Base
 
 
   def self.most_recent
-    self.by_newest.limit(20)
+    self.by_newest.limit(RECENT_LIMIT)
   end
 
 end

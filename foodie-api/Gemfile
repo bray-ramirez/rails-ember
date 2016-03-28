@@ -21,6 +21,9 @@ group :development do
   gem 'annotate', '~> 2.7'
   gem 'spring'
   gem 'thin'
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'factory_girl_rails', '~> 4.6'
+  gem 'faker', '~> 1.6', '>= 1.6.3'
 end
 
 # To use ActiveModel has_secure_password

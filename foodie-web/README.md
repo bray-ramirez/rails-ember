@@ -24,6 +24,7 @@ You will need the following things properly installed on your computer.
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
+* Run [Rails API](https://github.com/brayramirez/rails-ember/tree/master/foodie-api)
 
 ### Code Generators
 

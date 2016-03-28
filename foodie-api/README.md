@@ -15,4 +15,4 @@
 
 ## Running the applicaation
 * `rails s`
-* Application will be running in `localhost:3000`
+* Application will be running at `localhost:3000`

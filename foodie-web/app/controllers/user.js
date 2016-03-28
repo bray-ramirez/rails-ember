@@ -81,6 +81,14 @@ export default Ember.Controller.extend(EmberValidations, {
       });
     },
 
+    delete: function(id){
+      var _this = this;
+
+      this.store.findRecord('user', id).then(function(user){
+        user.destroyRecord();
+      });
+    },
+
     showForm: function(){
       this.set('isNewFormVisible', true);
     },
